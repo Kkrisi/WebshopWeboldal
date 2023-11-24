@@ -1,0 +1,129 @@
+* { /*Minden html elemre érvényes lesz*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*width értékbe a padding és a border is beletartozik*/
+}
+header,aside,footer {
+    border: 1px solid gray;
+    padding: 10px;
+}
+body {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #154c79;
+}
+header nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 8px;
+}
+nav ul li {
+    background-color: black;
+    padding: 6px;
+    text-align: center;
+    border: 2px solid black;
+}
+nav ul li a {
+    color: #f6821f;
+    text-decoration: none;
+    background-color: black;
+}
+main {
+    display: grid;
+    grid-template-areas: 
+    "h h h"
+    "a a s"
+    "f f f"
+    ;
+}
+header {
+    grid-area: h;
+}
+aside {
+    grid-area: s;
+    background-color: #1e81b0;
+}
+footer {
+    grid-area: f;
+}
+article img {
+    width: 100%;
+}
+article {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    background-color: black; 
+}
+article div {
+    background-color: #76b5c5;
+    border-radius: 5px;
+    padding: 10px;
+}
+article div button {
+    background-color: #154c79;
+    color: lightblue;
+    padding: 5px;
+    border-radius: 8px;
+}
+article .gombar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    padding: 20px 5px 0px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*töréspont media query-vel*/
+/*Tablet*/
+@media only screen and (max-width: 700px) {
+    body {
+      width: 100%;
+      font-size: 2vw;
+    }
+    main {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 50px auto auto 50px;
+        grid-template-areas: "h h" "n n" "a j" "b b" "f f";
+    }
+
+  }
+@media only screen and (max-width: 650px) {
+    body {
+        width: 100%;
+        font-size: 5vw;
+    }
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto auto 50px;
+        grid-template-areas: "h" "n" "a" "j" "b" "f";
+    }
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+
+
